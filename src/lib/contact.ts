@@ -60,6 +60,8 @@ export class EnquiriesNotConfiguredError extends Error {}
 
 /** Posts the enquiry to our own API route and returns the reference shown on the thank-you page. */
 export async function submitContact(data: ContactPayload & { website?: string }) {
+  // Static hosting (GitHub Pages) has no API route: fall back to the pre-filled email.
+  if (process.env.NEXT_PUBLIC_STATIC_EXPORT) throw new EnquiriesNotConfiguredError();
   const res = await fetch("/api/enquiry", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
