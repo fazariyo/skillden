@@ -1,0 +1,8 @@
+<!-- TEMPORARY favicon redrawn from the brand guidelines; replace with the kit's 02-favicon artwork. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="12" fill="#0F1B2A"/>
+  <g transform="translate(12 13.6) scale(0.4)">
+    <polygon points="50,0 100,50 86,64 50,28 14,64 0,50" fill="#FFFFFF"/>
+    <polygon points="50,40 76,66 50,92 24,66" fill="#8DB3D6"/>
+  </g>
+</svg>
