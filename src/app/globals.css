@@ -65,7 +65,7 @@
 
 /*
  * Scroll-reveal start states. Only hidden once JS has run (html.js, set in app/layout.tsx), so the
- * page never stays blank if scripts fail. GSAP animates them in (components/effects/RevealAnimations.tsx).
+ * page never stays blank if scripts fail. The Web Animations API animates them in (components/effects/RevealAnimations.tsx).
  */
 @media (prefers-reduced-motion: no-preference) {
   .js .reveal,
@@ -124,6 +124,35 @@
 }
 .pulse-dot {
   animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* Compact hand-off (phones): the tick pops in, the next task's arrow nudges toward the assistant. */
+@keyframes check-pop {
+  0% {
+    transform: scale(0);
+  }
+  70% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.check-pop {
+  animation: check-pop 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes nudge-x {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+}
+.nudge-x {
+  animation: nudge-x 1s ease-in-out infinite;
 }
 
 /* ---------- Navbar mega menus ---------- */

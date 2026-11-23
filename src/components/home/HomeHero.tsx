@@ -5,7 +5,7 @@ import { heroProof, partners } from "@/content/home";
 import ContactButton from "@/components/contact/ContactButton";
 import AutoCarousel from "@/components/effects/AutoCarousel";
 import { primaryButton, secondaryButton } from "@/components/ui/buttonStyles";
-import HandoffBoard from "./HandoffBoard";
+import HandoffBoard, { HandoffBoardCompact } from "./HandoffBoard";
 
 export default function HomeHero() {
   return (
@@ -42,9 +42,14 @@ export default function HomeHero() {
           </ul>
         </div>
 
-        {/* Too tall for phones; the copy and CTA carry the hero there. */}
-        <div className="hero-intro hidden sm:block">
-          <HandoffBoard />
+        {/* Two-panel board from sm up; phones get the compact one-column version. */}
+        <div className="hero-intro">
+          <div className="sm:hidden">
+            <HandoffBoardCompact />
+          </div>
+          <div className="hidden sm:block">
+            <HandoffBoard />
+          </div>
         </div>
       </div>
 
